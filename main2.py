@@ -11,7 +11,10 @@ from sklearn.neural_network import MLPClassifier
 st.header('MACHINE LEARNING 20-22 Aug 2024 - Regression')
 st.write('😊 by Nattacha S.')
 
-st.pyplot()
+fig,ax=subplots()
+ax.scatter(x,y)
+ax.scatter(x,y_pred)
+st.pyplot(fig)
 x=4*np.random.rand(100)
 y=np.sin(2*x + 1) +0.1*np.random.randn(100)
 
