@@ -15,6 +15,7 @@ fig,ax=subplots()
 ax.scatter(x,y)
 ax.scatter(x,y_pred)
 st.pyplot(fig)
+
 x=4*np.random.rand(100)
 y=np.sin(2*x + 1) +0.1*np.random.randn(100)
 
@@ -28,7 +29,6 @@ if classifier == 'KNN':
   y_pred = knn.predict(x.reshape(-1,1))
   plt.scatter(x, y)
   plt.scatter(x, y_pred)
-  st.write(acc)
 
 if classifier == 'SVM':
   svm = SVR()
@@ -36,7 +36,7 @@ if classifier == 'SVM':
   y_pred = svm.predict(x.reshape(-1,1))
   plt.scatter(x, y)
   plt.scatter(x, y_pred)
-  st.write(acc)
+
 
 if classifier == 'Decision Tree':
   dt = DecisionTreeRegressor()
@@ -44,7 +44,6 @@ if classifier == 'Decision Tree':
   y_pred = dt.predict(x.reshape(-1,1))
   plt.scatter(x, y)
   plt.scatter(x, y_pred)
-  st.write(acc) 
 
 if classifier == 'Neural Network':
   nn = MLPRegressor()
@@ -52,7 +51,6 @@ if classifier == 'Neural Network':
   y_pred = nn.predict(x.reshape(-1,1))
   plt.scatter(x, y)
   plt.scatter(x, y_pred)
-  st.write(acc)
 
 if classifier == 'Random Forest':
   rf = RandomForestRegressor()
@@ -60,4 +58,3 @@ if classifier == 'Random Forest':
   y_pred = rf.predict(x.reshape(-1,1))
   plt.scatter(x, y)
   plt.scatter(x, y_pred)
-  st.write(acc)
