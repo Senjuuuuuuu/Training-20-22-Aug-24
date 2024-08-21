@@ -11,6 +11,7 @@ from sklearn.neural_network import MLPClassifier
 st.header('MACHINE LEARNING 20-22 Aug 2024 - Regression')
 st.write('😊 by Nattacha S.')
 
+st.pyplot()
 x=4*np.random.rand(100)
 y=np.sin(2*x + 1) +0.1*np.random.randn(100)
 
@@ -26,4 +27,34 @@ if classifier == 'KNN':
   plt.scatter(x, y_pred)
   st.write(acc)
 
+if classifier == 'SVM':
+  svm = SVR()
+  svm.fit(x.reshape(-1,1), y)
+  y_pred = svm.predict(x.reshape(-1,1))
+  plt.scatter(x, y)
+  plt.scatter(x, y_pred)
+  st.write(acc)
 
+if classifier == 'Decision Tree':
+  dt = DecisionTreeRegressor()
+  dt.fit(x.reshape(-1,1), y)
+  y_pred = dt.predict(x.reshape(-1,1))
+  plt.scatter(x, y)
+  plt.scatter(x, y_pred)
+  st.write(acc) 
+
+if classifier == 'Neural Network':
+  nn = MLPRegressor()
+  nn.fit(x.reshape(-1,1), y)
+  y_pred = nn.predict(x.reshape(-1,1))
+  plt.scatter(x, y)
+  plt.scatter(x, y_pred)
+  st.write(acc)
+
+if classifier == 'Random Forest':
+  rf = RandomForestRegressor()
+  rf.fit(x.reshape(-1,1), y)
+  y_pred = rf.predict(x.reshape(-1,1))
+  plt.scatter(x, y)
+  plt.scatter(x, y_pred)
+  st.write(acc)
