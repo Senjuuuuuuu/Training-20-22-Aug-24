@@ -14,11 +14,16 @@ st.write('😊 by Nattacha S.')
 x=4*np.random.rand(100)
 y=np.sin(2*x + 1) +0.1*np.random.randn(100)
 
-if
-knn = KNeighborsRegressor(n_neighbors=5)
-knn.fit(x.reshape(-1,1), y)
-y_pred = knn.predict(x.reshape(-1,1))
-plt.scatter(x, y)
-plt.scatter(x, y_pred)
+st.sidebar.title('Classifiers')
+classifier = st.sidebar.selectbox('Select Classifier', ('KNN', 'SVM','Decision Tree', 'Random Forest', 'Neural Network'))
+
+
+if classifier == 'KNN':
+  knn = KNeighborsRegressor(n_neighbors=5)
+  knn.fit(x.reshape(-1,1), y)
+  y_pred = knn.predict(x.reshape(-1,1))
+  plt.scatter(x, y)
+  plt.scatter(x, y_pred)
+  st.write(acc)
 
 
