@@ -21,8 +21,9 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 st.sidebar.title('Classifiers')
 classifier = st.sidebar.selectbox('Select Classifier', ('KNN', 'SVM','Decision Tree', 'Random Forest', 'Neural Network'))
 
+k = st.sidebar.slider('K', 1, 20, 3)
 if classifier == 'KNN':
-  knn = KNeighborsClassifier(n_neighbors=3)
+  knn = KNeighborsClassifier(n_neighbors=k)
   knn.fit(x_train, y_train)
   y_pred = knn.predict(x_test)
   accuracy_score(y_test, y_pred)
