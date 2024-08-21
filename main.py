@@ -8,6 +8,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
 
+st.header('MACHINE LEARNING 20-22 Aug 2024')
+st.write('😊 by Nattacha S.')
 
 df = sns.load_dataset('iris')
 df
