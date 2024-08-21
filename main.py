@@ -49,6 +49,6 @@ if classifier == 'Random Forest':
 
 if classifier == 'Neural Network':
   nn = MLPClassifier()
-  nn.fit(x_train, y_train
+  nn.fit(x_train, y_train)
   y_pred = nn.predict(x_test)
   accuracy_score(y_test, y_pred)
